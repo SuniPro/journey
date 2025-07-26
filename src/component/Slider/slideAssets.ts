@@ -56,7 +56,7 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
   {
     title: "JP",
     num: "08",
-    img: "https://media.istockphoto.com/id/926689776/it/foto/vista-ad-angolo-basso-dei-grattacieli-di-new-york.jpg?s=612x612&w=0&k=20&c=DmEB0Ty7ZwDnBoU5SuA8FNevOp4G1UcECw5aS4vA9A8=",
+    img: anycastLogo,
   },
   {
     title: "anycast",
