@@ -7,6 +7,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import { DailyTimer } from "../component/DailyTimer/DailyTimer";
 import { useTime } from "../context/TimeContext";
 import { css } from "@emotion/react";
+
 export function Main() {
   return (
     <>
