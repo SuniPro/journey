@@ -7,14 +7,30 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import { DailyTimer } from "../component/DailyTimer/DailyTimer";
 import { useTime } from "../context/TimeContext";
 import { css } from "@emotion/react";
+import { useState } from "react";
+import { CustomModal } from "../component/Modal";
 
 export function Main() {
+  const [selected, setSelected] = useState<string>("");
+
   return (
     <>
       <Description />
       <LinkList />
       <DailyTimer />
-      <WheelSlider width={300} height={500} assets={WheelSlideAssets} />
+      <WheelSlider
+        width={300}
+        height={500}
+        assets={WheelSlideAssets}
+        selectedState={{ selected, setSelected }}
+      />
+      <CustomModal
+        open={false}
+        close={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+        children={undefined}
+      ></CustomModal>
     </>
   );
 }

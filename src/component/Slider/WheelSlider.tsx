@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
-import { type ReactNode } from "react";
+import { Dispatch, type ReactNode, SetStateAction } from "react";
 import { css, useTheme } from "@emotion/react";
 import { useCarouselGesture } from "../../hooks/useCarouselGesture";
 import { WheelSlideAssetType } from "./slideAssets";
@@ -9,8 +9,12 @@ export function WheelSlider(props: {
   width: number;
   height: number;
   assets: WheelSlideAssetType[];
+  selectedState: {
+    selected: string;
+    setSelected: Dispatch<SetStateAction<string>>;
+  };
 }) {
-  const { width, height, assets } = props;
+  const { width, height, assets, selectedState } = props;
 
   const { activeIndex, dragBind, wheelBind } = useCarouselGesture(
     assets.length,
@@ -31,6 +35,7 @@ export function WheelSlider(props: {
           size={assets.length}
           index={index}
           activeIndex={activeIndex}
+          selectedState={selectedState}
         />
       ))}
     </div>
@@ -45,9 +50,15 @@ export function SliderItem(props: {
   index: number;
   activeIndex: number;
   children?: ReactNode;
+  selectedState: {
+    selected: string;
+    setSelected: Dispatch<SetStateAction<string>>;
+  };
 }) {
-  const { slide, width, height, index, size, activeIndex } = props;
+  const { slide, width, height, index, size, activeIndex, selectedState } =
+    props;
   const { title, num, img } = slide;
+  const { setSelected } = selectedState;
 
   const theme = useTheme();
 
@@ -67,6 +78,7 @@ export function SliderItem(props: {
       width={width}
       height={height}
       active={size === zIndex}
+      onClick={() => setSelected(title)}
     >
       <ItemBox opacity={opacity}>
         <div
