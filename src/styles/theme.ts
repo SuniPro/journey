@@ -98,6 +98,7 @@ const colors = {
   vividCerulean: "#00A0FF",
   blueBikini: "#00aeef",
   skyBlue: "#007BFF",
+  darkCerulean: "#003C82",
   deepBlue: "#0056D2",
   royalBlue: "#003C99",
 
@@ -220,8 +221,11 @@ const lightMode = {
         description: fontStyle.yesGothicMedium,
       },
     },
+    card: {
+      title: fontStyle.sCoreDreamBold,
+    },
     component: {
-      title: fontStyle.tradeGothicBold,
+      title: fontStyle.appleNeoBold,
       description: fontStyle.poppins,
     },
     banner: {
@@ -299,8 +303,11 @@ const darkMode = {
       },
     },
     component: {
-      title: fontStyle.tradeGothicBold,
+      title: fontStyle.appleNeoBold,
       description: fontStyle.poppins,
+    },
+    card: {
+      title: fontStyle.sCoreDreamBold,
     },
     banner: {
       collection: {

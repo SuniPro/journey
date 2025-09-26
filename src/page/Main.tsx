@@ -7,11 +7,21 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import { DailyTimer } from "../component/DailyTimer/DailyTimer";
 import { useTime } from "../context/TimeContext";
 import { css } from "@emotion/react";
-import { useState } from "react";
-import { CustomModal } from "../component/Modal";
+import { useEffect, useState } from "react";
+import { BackgroundManager } from "../component/layouts";
 
 export function Main() {
   const [selected, setSelected] = useState<string>("");
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 overflow-hidden 추가
+    document.body.style.overflow = "hidden";
+
+    // 컴포넌트가 언마운트될 때 원래 상태로 복원
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   return (
     <>
@@ -24,13 +34,7 @@ export function Main() {
         assets={WheelSlideAssets}
         selectedState={{ selected, setSelected }}
       />
-      <CustomModal
-        open={false}
-        close={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-        children={undefined}
-      ></CustomModal>
+      <BackgroundManager />
     </>
   );
 }

@@ -24,7 +24,7 @@ export function WheelSlider(props: {
     <div
       {...wheelBind()}
       {...dragBind()}
-      className="relative z-[1] h-[100vh] overflow-hidden pointer-events-none"
+      className="relative z-[1] h-[100vh] pointer-events-none"
     >
       {assets.map((asset, index) => (
         <SliderItem

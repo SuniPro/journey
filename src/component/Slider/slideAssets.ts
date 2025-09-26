@@ -10,6 +10,7 @@ import githubLogo from "../../assets/image/github-logo.png";
 import nexusLogo from "../../assets/image/nexus-logo.png";
 import anycastLogo from "../../assets/image/anycast-logo.png";
 import uAnalyzer from "../../assets/image/uanalyzer-logo.png";
+import icoins from "../../assets/image/brand/iCoinVertical.avif";
 
 export interface WheelSlideAssetType {
   title: string;
@@ -57,6 +58,11 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "JP",
     num: "08",
     img: anycastLogo,
+  },
+  {
+    title: "icoins",
+    num: "09",
+    img: icoins,
   },
   {
     title: "anycast",
