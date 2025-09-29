@@ -5,7 +5,7 @@ import en from "../assets/image/united-states.png"
 
 export function LanguageButton(props: {
   language: "en" | "jp" | "kr";
-  change: (lang : "en" | "jp" | "kr") => void;
+  change: (_lang : "en" | "jp" | "kr") => void;
 }) {
   const { language, change } = props;
   const lang = () => {

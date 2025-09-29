@@ -20,7 +20,7 @@ export function Suni() {
       setLanguage("jp");
     } else if (lang === "jp") {
       setLanguage("kr");
-    } else if (lang === "kr") {
+    } else {
       setLanguage("en");
     }
   };
