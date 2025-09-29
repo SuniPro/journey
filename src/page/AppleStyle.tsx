@@ -132,7 +132,7 @@ export function AppleStyle() {
         </ContentsContainer>
         <ContentsContainer>
           <a
-              className="text-lg text-white hover:text-blue-500"
+            className="text-lg text-white hover:text-blue-500"
             href="https://github.com/SuniPro/tree/main/src/component/Card"
           >
             Go To More
@@ -198,7 +198,7 @@ export function AppleStyle() {
         </ContentsContainer>
         <ContentsContainer>
           <a
-              className="text-lg text-white hover:text-blue-500"
+            className="text-lg text-white hover:text-blue-500"
             href="https://github.com/SuniPro/tree/main/src/component/Card"
           >
             Go To More

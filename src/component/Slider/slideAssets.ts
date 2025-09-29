@@ -33,7 +33,7 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "BelleForetResort",
     num: "03",
     img: belleforetresort,
-    link: "https://belleforetresort.com/"
+    link: "https://belleforetresort.com/",
   },
   {
     title: "MarketKully",
@@ -54,7 +54,7 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "codle",
     num: "07",
     img: codle,
-    link: "https://about.codle.io/ko/"
+    link: "https://about.codle.io/ko/",
   },
   {
     title: "JP",
@@ -65,7 +65,7 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "icoins",
     num: "09",
     img: icoins,
-    link : "https://icoins.info/"
+    link: "https://icoins.info/",
   },
   {
     title: "anycast",
@@ -76,13 +76,13 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "AppleStyle",
     num: "11",
     img: AppleWallpaper,
-    link: "/apple"
+    link: "/apple",
   },
   {
     title: "NetflixStyle",
     num: "12",
     img: netflix,
-    link: "/netflix"
+    link: "/netflix",
   },
   {
     title: "Server API",

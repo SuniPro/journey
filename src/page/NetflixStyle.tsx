@@ -12,9 +12,9 @@ export function NetflixStyle() {
         <ContentsContainer>
           <NetflixStyleCardFlip />
         </ContentsContainer>
-          <ContentsContainer>
-              <SyntaxHighlighter language="react" className="w-full rounded-md">
-                  {`
+        <ContentsContainer>
+          <SyntaxHighlighter language="react" className="w-full rounded-md">
+            {`
 export function NetflixStyleCardFlip() {
 
     const [videoShownIndex, setVideoShownIndex] = useState<number | null>(0);
@@ -56,16 +56,16 @@ export function NetflixStyleCardFlip() {
     </FlipContainer>
 }
         `}
-              </SyntaxHighlighter>
-          </ContentsContainer>
-          <ContentsContainer>
-              <a
-                  className="text-lg text-white hover:text-blue-500"
-                  href="https://github.com/SuniPro/tree/main/src/component/Card/NetflixStyleCardFlip"
-              >
-                  Go To More
-              </a>
-          </ContentsContainer>
+          </SyntaxHighlighter>
+        </ContentsContainer>
+        <ContentsContainer>
+          <a
+            className="text-lg text-white hover:text-blue-500"
+            href="https://github.com/SuniPro/tree/main/src/component/Card/NetflixStyleCardFlip"
+          >
+            Go To More
+          </a>
+        </ContentsContainer>
       </PageContainer>
       <HomeButton />
     </>

@@ -4,7 +4,7 @@ import { Dispatch, type ReactNode, SetStateAction } from "react";
 import { css, useTheme } from "@emotion/react";
 import { useCarouselGesture } from "../../hooks/useCarouselGesture";
 import { WheelSlideAssetType } from "./slideAssets";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function WheelSlider(props: {
   width: number;
@@ -77,10 +77,10 @@ export function SliderItem(props: {
       if (link.includes("https")) {
         window.open(link);
       } else {
-       navigate(link);
+        navigate(link);
       }
     }
-  }
+  };
 
   return (
     <Item

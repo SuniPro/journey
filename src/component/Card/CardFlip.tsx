@@ -13,59 +13,59 @@ gsap.registerPlugin(Flip);
  * 이 최대 크기는 각 노드들의 크기에도 관여하기 때문에 레이아웃을 고려하여 전달해야합니다.
  */
 export function NetflixCardFlip(props: {
-    nodeList: ReactNode[];
-    maxWidth: number;
-    selectedIndex: number;
-    setSelectedIndex: Dispatch<SetStateAction<number>>;
+  nodeList: ReactNode[];
+  maxWidth: number;
+  selectedIndex: number;
+  setSelectedIndex: Dispatch<SetStateAction<number>>;
 }) {
-    const { nodeList, maxWidth, selectedIndex, setSelectedIndex } = props;
+  const { nodeList, maxWidth, selectedIndex, setSelectedIndex } = props;
 
-    const containerRef = useRef<HTMLDivElement>(null);
-    const prevSelected = useRef<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const prevSelected = useRef<number | null>(null);
 
-    const handleClick = (index: number) => {
-        if (!containerRef.current) return;
-        if (index === selectedIndex) return; // 자기 자신이면 무시
+  const handleClick = (index: number) => {
+    if (!containerRef.current) return;
+    if (index === selectedIndex) return; // 자기 자신이면 무시
 
-        const state = Flip.getState(containerRef.current.children);
-        prevSelected.current = selectedIndex;
-        setSelectedIndex(index);
+    const state = Flip.getState(containerRef.current.children);
+    prevSelected.current = selectedIndex;
+    setSelectedIndex(index);
 
-        requestAnimationFrame(() => {
-            Flip.from(state, {
-                duration: 1,
-                ease: "expo.out",
-                absolute: true,
-            });
-        });
-    };
-    const gridCount = (nodeList.length - 1) * 2;
+    requestAnimationFrame(() => {
+      Flip.from(state, {
+        duration: 1,
+        ease: "expo.out",
+        absolute: true,
+      });
+    });
+  };
+  const gridCount = (nodeList.length - 1) * 2;
 
-    return (
-        <FlipContainer ref={containerRef} length={gridCount} maxWidth={maxWidth}>
-            {nodeList.map((node, index) => {
-                const isActive = index === selectedIndex;
-                const isInactive = index !== selectedIndex;
+  return (
+    <FlipContainer ref={containerRef} length={gridCount} maxWidth={maxWidth}>
+      {nodeList.map((node, index) => {
+        const isActive = index === selectedIndex;
+        const isInactive = index !== selectedIndex;
 
-                return (
-                    <FlipCard
-                        key={index}
-                        isActive={isActive}
-                        isInactive={isInactive}
-                        length={gridCount}
-                        onClick={() => handleClick(index)}
-                        maxWidth={maxWidth}
-                    >
-                        {node}
-                    </FlipCard>
-                );
-            })}
-        </FlipContainer>
-    );
+        return (
+          <FlipCard
+            key={index}
+            isActive={isActive}
+            isInactive={isInactive}
+            length={gridCount}
+            onClick={() => handleClick(index)}
+            maxWidth={maxWidth}
+          >
+            {node}
+          </FlipCard>
+        );
+      })}
+    </FlipContainer>
+  );
 }
 
 const FlipContainer = styled.article<{ length: number; maxWidth: number }>(
-    ({ length, maxWidth }) => css`
+  ({ length, maxWidth }) => css`
     width: 100%;
     max-width: ${maxWidth}px;
     display: grid;
@@ -76,12 +76,12 @@ const FlipContainer = styled.article<{ length: number; maxWidth: number }>(
 );
 
 const FlipCard = styled.div<{
-    isActive: boolean;
-    isInactive: boolean;
-    length: number;
-    maxWidth: number;
+  isActive: boolean;
+  isInactive: boolean;
+  length: number;
+  maxWidth: number;
 }>(
-    ({ isActive, isInactive, length, maxWidth }) => css`
+  ({ isActive, isInactive, length, maxWidth }) => css`
     cursor: pointer;
     overflow: hidden;
     border-radius: 12px;
