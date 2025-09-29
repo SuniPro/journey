@@ -2,7 +2,7 @@ import { css, Theme, useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import HomeIcon from "@mui/icons-material/Home";
 import Button from "@mui/material/Button";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function HomeButton() {
   const theme = useTheme();

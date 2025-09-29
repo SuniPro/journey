@@ -99,13 +99,21 @@ export function BackgroundManager() {
     // Dawn: 04:30 (270) ~ 06:30 (390)
     if (mins >= 270 && mins <= 390) {
       const t = (mins - 270) / 120; // 0 to 1 over 2 hours
-      return `linear-gradient(135deg, ${lerpColor("#442f81", "#fffdee", t)}, ${lerpColor("#240032", "#ebd86f", t)})`;
+      return `linear-gradient(135deg, ${lerpColor(
+        "#442f81",
+        "#fffdee",
+        t,
+      )}, ${lerpColor("#240032", "#ebd86f", t)})`;
     }
 
     // Twilight: 16:30 (990) ~ 18:30 (1110)
     if (mins >= 990 && mins <= 1110) {
       const t = (mins - 990) / 120; // 0 to 1 over 2 hours
-      return `linear-gradient(135deg, ${lerpColor("#fffdee", "#442f81", t)}, ${lerpColor("#ebd86f", "#240032", t)})`;
+      return `linear-gradient(135deg, ${lerpColor(
+        "#fffdee",
+        "#442f81",
+        t,
+      )}, ${lerpColor("#ebd86f", "#240032", t)})`;
     }
 
     // Night

@@ -50,13 +50,21 @@ export function TimerBox(props: {
     // 새벽 (04:30 ~ 06:30)
     if (mins >= 270 && mins <= 390) {
       const t = (mins - 270) / 120;
-      return `linear-gradient(to top right, ${lerpColor(nightFrom, dayFrom, t)}, ${lerpColor(nightTo, dayTo, t)})`;
+      return `linear-gradient(to top right, ${lerpColor(
+        nightFrom,
+        dayFrom,
+        t,
+      )}, ${lerpColor(nightTo, dayTo, t)})`;
     }
 
     // 황혼 (16:30 ~ 18:30)
     if (mins >= 990 && mins <= 1110) {
       const t = (mins - 990) / 120;
-      return `linear-gradient(to top right, ${lerpColor(dayFrom, nightFrom, t)}, ${lerpColor(dayTo, nightTo, t)})`;
+      return `linear-gradient(to top right, ${lerpColor(
+        dayFrom,
+        nightFrom,
+        t,
+      )}, ${lerpColor(dayTo, nightTo, t)})`;
     }
 
     // 밤
@@ -94,7 +102,7 @@ const TimerBoxContainer = styled.div<{ gradient: string }>(
       0 4px 6px -4px rgba(0, 0, 0, 0.1);
     background: ${gradient};
     transition: background 1.5s ease-in-out;
-    
+
     font-size: 12px;
   `,
 );

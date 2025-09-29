@@ -13,7 +13,7 @@ import { LanguageButton } from "../component/LanguageButton";
 export function Suni() {
   const { windowWidth } = useWindowContext();
   const [language, setLanguage] = useState<"en" | "jp" | "kr">("en");
-  const theme =useTheme();
+  const theme = useTheme();
 
   const languageChange = (lang: "en" | "jp" | "kr") => {
     if (lang === "en") {
@@ -32,7 +32,7 @@ export function Suni() {
       case "jp":
         return <JpVersion />;
       case "kr":
-        return <KrVersion />
+        return <KrVersion />;
     }
   };
 
@@ -56,17 +56,19 @@ export function Suni() {
   );
 }
 
-const Description = styled.div(({theme}) => css`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
+const Description = styled.div(
+  ({ theme }) => css`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
 
-  gap: 10px;
-  
-  font-weight: 300;
-  font-family: ${theme.mode.font.component.description};
-`);
+    gap: 10px;
+
+    font-weight: 300;
+    font-family: ${theme.mode.font.component.description};
+  `,
+);
 
 function EngVersion() {
   const theme = useTheme();
@@ -463,11 +465,17 @@ function KrVersion() {
             직접 직접 response, request 핸들링과 baseUrl 설정 및 intercepter가
             기능하게끔 customFetchBase 라이브러리를 자제 제작하여 사내에
             배포해서 활용하였습니다.
-            <br /><br />
-            제피 어플 개발 중에는 지금까지 존재하지 않았던 Light mode, Drak mode를 좀 더 쉽게 구축하기 위해 오픈소스 개발을 병행하여 진행중입니다.
+            <br />
+            <br />
+            제피 어플 개발 중에는 지금까지 존재하지 않았던 Light mode, Drak
+            mode를 좀 더 쉽게 구축하기 위해 오픈소스 개발을 병행하여
+            진행중입니다.
             <br /> <br />
-            이처럼 저는 개발자로서 좀 더 최신 기술을 능숙하고 고도화해서 사용할 수 있는 노력을 멈추지 않아왔습니다. <br />
-            "어떻게 하면 더 가독성이 좋을까?", "어떻게 하면 좀 더 효율적인 코드일까?" 라는 질문을 끊임없이 스스로 되묻는 저는 코더가 아닌 개발자 소순현입니다.
+            이처럼 저는 개발자로서 좀 더 최신 기술을 능숙하고 고도화해서 사용할
+            수 있는 노력을 멈추지 않아왔습니다. <br />
+            "어떻게 하면 더 가독성이 좋을까?", "어떻게 하면 좀 더 효율적인
+            코드일까?" 라는 질문을 끊임없이 스스로 되묻는 저는 코더가 아닌
+            개발자 소순현입니다.
           </span>
         </Description>
       </ContentsContainer>
@@ -481,12 +489,8 @@ function KrVersion() {
               padding-left: 1.4rem;
             `}
           >
-            <li className="pb-2">
-              KAIST RESEARCH: 과학 영재 교육
-            </li>
-            <li className="pb-2">
-              숭실대학교: 경영학 전공
-            </li>
+            <li className="pb-2">KAIST RESEARCH: 과학 영재 교육</li>
+            <li className="pb-2">숭실대학교: 경영학 전공</li>
             <li className="pb-2">
               Franklin University Switzerland: AI & Big Data 전공
             </li>
@@ -514,7 +518,8 @@ function KrVersion() {
             `}
           >
             <li className="pb-2">
-              군에서 Java 및 React를 활용한 MIMS (군사첩보유통체계) 및 TAMS (신호정보 분석 프로그램) 사업에 참여하였습니다.
+              군에서 Java 및 React를 활용한 MIMS (군사첩보유통체계) 및 TAMS
+              (신호정보 분석 프로그램) 사업에 참여하였습니다.
             </li>
           </ul>
           <ContentsTitle
@@ -533,7 +538,9 @@ function KrVersion() {
             `}
           >
             <li className="pb-2">
-              군에서의 경력을 인정받아 INQ 본부 개발2팀 팀장 직책으로 크림솔루션에 입사하였으며, Belleforet 하이브리드앱 제작을 총괄하였습니다.
+              군에서의 경력을 인정받아 INQ 본부 개발2팀 팀장 직책으로
+              크림솔루션에 입사하였으며, Belleforet 하이브리드앱 제작을
+              총괄하였습니다.
             </li>
           </ul>
           <ContentsTitle
@@ -542,7 +549,8 @@ function KrVersion() {
               font-size: 2.4vw;
             `}
           >
-            Jun 2023 – Jun 2024 | DT 서비스 개발팀 선임 | Nexus (UBase Subsidiary)
+            Jun 2023 – Jun 2024 | DT 서비스 개발팀 선임 | Nexus (UBase
+            Subsidiary)
           </ContentsTitle>
           <ul
             className="text-left text-2xl"
@@ -552,10 +560,12 @@ function KrVersion() {
             `}
           >
             <li className="pb-2">
-              크림솔루션의 개발방침이 egov를 고집하는 관계로 UBase의 자회사인 Nexus로 선임으로 이직하였습니다.
+              크림솔루션의 개발방침이 egov를 고집하는 관계로 UBase의 자회사인
+              Nexus로 선임으로 이직하였습니다.
             </li>
             <li className="pb-2">
-              맡은 프로젝트는 U Analysis, U Rms입니다. 이중 U Rms의 FrontEnd는 단독으로 진행하였습니다.
+              맡은 프로젝트는 U Analysis, U Rms입니다. 이중 U Rms의 FrontEnd는
+              단독으로 진행하였습니다.
             </li>
           </ul>
           <ContentsTitle
@@ -574,7 +584,11 @@ function KrVersion() {
             `}
           >
             <li className="pb-2">
-              Nexus는 솔루션 회사의 특성 상 폐쇄망에서의 개발이 주로 이루어지며, 회사의 메인 솔루션인 상담 솔루션은 웹앱이 아닌 C++ 엔진이 기반인 관계로 해외 연수를 계획하고 이동하려던 중 팀 모노리스의 디지털교과서 개발에 함께하자는 연락으로 FrontEnd 개발자로 팀모노리스에 입사하여 디지털 교과서 사업에 참여하였습니다.
+              Nexus는 솔루션 회사의 특성 상 폐쇄망에서의 개발이 주로 이루어지며,
+              회사의 메인 솔루션인 상담 솔루션은 웹앱이 아닌 C++ 엔진이 기반인
+              관계로 해외 연수를 계획하고 이동하려던 중 팀 모노리스의
+              디지털교과서 개발에 함께하자는 연락으로 FrontEnd 개발자로
+              팀모노리스에 입사하여 디지털 교과서 사업에 참여하였습니다.
             </li>
           </ul>
           <ContentsTitle
@@ -593,7 +607,9 @@ function KrVersion() {
             `}
           >
             <li className="pb-2">
-              디지털교과서 사업이 종료되고, 스타일리더의 연락을 받아 해외에서 연수를 진행하면서, 해외에서 스타일리더 사이트 개발을 진행하였습니다.
+              디지털교과서 사업이 종료되고, 스타일리더의 연락을 받아 해외에서
+              연수를 진행하면서, 해외에서 스타일리더 사이트 개발을
+              진행하였습니다.
             </li>
           </ul>
           <ContentsTitle

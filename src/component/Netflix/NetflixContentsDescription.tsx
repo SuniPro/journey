@@ -188,7 +188,8 @@ const ImageCase = styled.div<{
 );
 
 const StyledButton = styled(FuncItem, {
-  shouldForwardProp: (prop) => !["backgroundColor", "color", "theme"].includes(prop),
+  shouldForwardProp: (prop) =>
+    !["backgroundColor", "color", "theme"].includes(prop),
 })<{
   backgroundColor: string;
   color: string;
@@ -199,7 +200,7 @@ const StyledButton = styled(FuncItem, {
     font-size: 1vw;
     background: ${backgroundColor};
     color: ${color};
-    
+
     border-radius: 4px;
   `,
 );
