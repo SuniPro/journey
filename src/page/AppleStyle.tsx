@@ -13,6 +13,7 @@ import styled from "@emotion/styled";
 import { AdCardSection } from "../component/AdCardSection";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { ScrollScaleVideo } from "../component/Video/ScrollScaleVideo";
+import { HomeButton } from "../component/HomeButton";
 
 export function AppleStyle() {
   const theme = useTheme();
@@ -131,7 +132,7 @@ export function AppleStyle() {
         </ContentsContainer>
         <ContentsContainer>
           <a
-            className="text-lg hover:text-blue-500"
+              className="text-lg text-white hover:text-blue-500"
             href="https://github.com/SuniPro/tree/main/src/component/Card"
           >
             Go To More
@@ -197,12 +198,13 @@ export function AppleStyle() {
         </ContentsContainer>
         <ContentsContainer>
           <a
-            className="text-lg hover:text-blue-500"
+              className="text-lg text-white hover:text-blue-500"
             href="https://github.com/SuniPro/tree/main/src/component/Card"
           >
             Go To More
           </a>
         </ContentsContainer>
+        <HomeButton />
       </PageContainer>
     </>
   );

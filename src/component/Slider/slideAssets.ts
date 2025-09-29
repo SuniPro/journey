@@ -5,7 +5,6 @@ import suni from "../../assets/image/suni-logo.png";
 import neaco from "../../assets/image/neaco.jpg";
 import kurly from "../../assets/image/kurly.webp";
 import codle from "../../assets/image/codle.png";
-import reactLogo from "../../assets/image/react-logo.png";
 import githubLogo from "../../assets/image/github-logo.png";
 import nexusLogo from "../../assets/image/nexus-logo.png";
 import anycastLogo from "../../assets/image/anycast-logo.png";
@@ -16,6 +15,7 @@ export interface WheelSlideAssetType {
   title: string;
   num: string;
   img: string;
+  link?: string;
 }
 
 export const WheelSlideAssets: WheelSlideAssetType[] = [
@@ -33,6 +33,7 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "BelleForetResort",
     num: "03",
     img: belleforetresort,
+    link: "https://belleforetresort.com/"
   },
   {
     title: "MarketKully",
@@ -53,6 +54,7 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "codle",
     num: "07",
     img: codle,
+    link: "https://about.codle.io/ko/"
   },
   {
     title: "JP",
@@ -63,26 +65,24 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "icoins",
     num: "09",
     img: icoins,
+    link : "https://icoins.info/"
   },
   {
     title: "anycast",
-    num: "09",
+    num: "10",
     img: anycastLogo,
   },
   {
     title: "AppleStyle",
-    num: "10",
+    num: "11",
     img: AppleWallpaper,
+    link: "/apple"
   },
   {
     title: "NetflixStyle",
-    num: "11",
-    img: netflix,
-  },
-  {
-    title: "Front Component",
     num: "12",
-    img: reactLogo,
+    img: netflix,
+    link: "/netflix"
   },
   {
     title: "Server API",

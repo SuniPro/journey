@@ -94,6 +94,8 @@ const TimerBoxContainer = styled.div<{ gradient: string }>(
       0 4px 6px -4px rgba(0, 0, 0, 0.1);
     background: ${gradient};
     transition: background 1.5s ease-in-out;
+    
+    font-size: 12px;
   `,
 );
 
