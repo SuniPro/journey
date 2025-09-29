@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css, Global, useTheme } from "@emotion/react";
+import { css, Global, Theme, useTheme } from "@emotion/react";
 import { useTime } from "../context/TimeContext";
 import { useMemo } from "react";
 import { lerpColor } from "./tools/ColorTools";
@@ -18,7 +18,7 @@ export const PageContainer = styled.div<{
   gap?: number;
 }>(
   ({ width, gap = 1 }) => css`
-    width: ${width}vw;
+    width: ${width}px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,10 +46,19 @@ export function GlobalStyled() {
         position: relative;
 
         z-index: -1;
-        background-color: ${theme.mode.bodyBackground};
+
+        #root {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
         html {
           font-size: 1vw;
+
+          :root {
+            background-color: ${theme.mode.bodyBackground};
+          }
 
           ::-webkit-scrollbar {
             display: none;
@@ -121,3 +130,27 @@ const BackgroundLayer = styled.div`
   pointer-events: none;
   transition: background 1.2s ease-in-out;
 `;
+
+export const ContentsTitle = styled.h2<{ theme: Theme }>(
+  ({ theme }) => css`
+    width: 100%;
+    font-weight: 600;
+    font-size: 3vw;
+    font-family: ${theme.mode.font.component.title};
+
+    text-align: left;
+  `,
+);
+
+export const CarouselContainer = styled.div<{ width: number }>(
+  ({ width }) => css`
+    width: ${width}px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 40px;
+  `,
+);

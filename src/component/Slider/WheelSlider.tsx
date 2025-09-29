@@ -4,6 +4,7 @@ import { Dispatch, type ReactNode, SetStateAction } from "react";
 import { css, useTheme } from "@emotion/react";
 import { useCarouselGesture } from "../../hooks/useCarouselGesture";
 import { WheelSlideAssetType } from "./slideAssets";
+import {useNavigate} from "react-router-dom";
 
 export function WheelSlider(props: {
   width: number;
@@ -24,7 +25,7 @@ export function WheelSlider(props: {
     <div
       {...wheelBind()}
       {...dragBind()}
-      className="relative z-[1] h-[100vh] overflow-hidden pointer-events-none"
+      className="relative z-[1] h-[100vh] pointer-events-none"
     >
       {assets.map((asset, index) => (
         <SliderItem
@@ -57,10 +58,12 @@ export function SliderItem(props: {
 }) {
   const { slide, width, height, index, size, activeIndex, selectedState } =
     props;
-  const { title, num, img } = slide;
+  const { title, num, img, link } = slide;
   const { setSelected } = selectedState;
 
   const theme = useTheme();
+
+  const navigate = useNavigate();
 
   const zIndex = size - Math.abs(index - activeIndex);
   const distance = index - activeIndex;
@@ -68,6 +71,16 @@ export function SliderItem(props: {
   const y = distance * 20;
   const rot = distance * 12;
   const opacity = Math.max(0, 1 - Math.abs(distance) * 0.2);
+
+  const pageMove = () => {
+    if (link) {
+      if (link.includes("https")) {
+        window.open(link);
+      } else {
+       navigate(link);
+      }
+    }
+  }
 
   return (
     <Item
@@ -78,9 +91,9 @@ export function SliderItem(props: {
       width={width}
       height={height}
       active={size === zIndex}
-      onClick={() => setSelected(title)}
+      onClick={pageMove}
     >
-      <ItemBox opacity={opacity}>
+      <ItemBox opacity={opacity} onClick={() => setSelected(title)}>
         <div
           className="absolute left-5 bottom-5 text-white text-lg font-bold z-[1]"
           css={css`

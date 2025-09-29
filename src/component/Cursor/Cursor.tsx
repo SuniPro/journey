@@ -4,8 +4,6 @@ import { css } from "@emotion/react";
 import { useTime } from "../../context/TimeContext";
 
 export function Cursor() {
-  // const { isPointer, isLike, isVideo } = useCursor();
-  // const isPhone = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const cursorRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
 
@@ -15,8 +13,8 @@ export function Cursor() {
     const animateCursor = (e: MouseEvent) => {
       if (!cursorRef.current || !dotRef.current) return;
 
-      dotRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-      cursorRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      cursorRef.current.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+      dotRef.current.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
     };
 
     window.addEventListener("mousemove", animateCursor);
@@ -25,18 +23,6 @@ export function Cursor() {
       window.removeEventListener("mousemove", animateCursor);
     };
   }, []);
-
-  // const CursorSelector = () => {
-  //   if (isVideo) {
-  //     return <></>;
-  //   } else if (isPointer && !isPhone) {
-  //     return <PointerCursor />;
-  //   } else if (isLike) {
-  //     return <FavoriteCursor />;
-  //   } else {
-  //     return <DefaultCursor />;
-  //   }
-  // };
 
   return (
     <>
@@ -56,39 +42,6 @@ export function Cursor() {
   );
 }
 
-// const StyledCursor = styled.div`
-//   position: absolute;
-//   pointer-events: none;
-//   z-index: 9999;
-//   top: 0;
-//   left: 0;
-//   transform: translate(-50%, -50%);
-// `;
-//
-// function PointerCursor() {
-//   return (
-//     <CursorCircle width={40} height={40}>
-//       <CursorDot width={2} height={2}></CursorDot>
-//     </CursorCircle>
-//   );
-// }
-//
-// function FavoriteCursor() {
-//   return (
-//     <CursorCircle width={40} height={40}>
-//       <CursorDot width={2} height={2}></CursorDot>
-//     </CursorCircle>
-//   );
-// }
-//
-// function DefaultCursor() {
-//   return (
-//     <CursorCircle width={40} height={40}>
-//       <CursorDot width={2} height={2}></CursorDot>
-//     </CursorCircle>
-//   );
-// }
-
 const CursorCircle = styled.div<{
   width: number;
   height: number;
@@ -99,7 +52,7 @@ const CursorCircle = styled.div<{
     -webkit-text-size-adjust: 100%;
     font-family: "Roboto", serif;
     position: absolute;
-    z-index: 10;
+    z-index: 2000;
     //top: 0;
     //left: 0;
     width: ${width}px;
@@ -113,10 +66,8 @@ const CursorCircle = styled.div<{
     pointer-events: none;
     display: block;
 
-    //z-index: 9999;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
   `,
 );
 
@@ -130,7 +81,7 @@ const CursorDot = styled.div<{
     -webkit-text-size-adjust: 100%;
     font-family: "Roboto", serif;
     position: absolute;
-    z-index: 10;
+    z-index: 2000;
     width: ${width}px;
     height: ${height}px;
     border-radius: 50%;
@@ -141,7 +92,6 @@ const CursorDot = styled.div<{
 
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
     transition: border 1s ease-in-out;
   `,
 );
