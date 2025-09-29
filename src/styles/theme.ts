@@ -218,7 +218,7 @@ const lightMode = {
       title: fontStyle.koPubDotumBold,
       component: {
         title: fontStyle.montserrat,
-        description: fontStyle.yesGothicMedium,
+        description: fontStyle.sCoreDreamMedium,
       },
     },
     card: {
