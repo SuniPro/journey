@@ -4,12 +4,6 @@ import { useTime } from "../context/TimeContext";
 import { useMemo } from "react";
 import { lerpColor } from "./tools/ColorTools";
 
-export const Container = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-
 /** @param: width => number 타입을 받아 vw 단위로 width를 결정합니다.
  *  @param: gap => gap 타입을 받아 vw 단위로 width를 결정합니다.
  * :*/
@@ -139,26 +133,13 @@ const BackgroundLayer = styled.div`
   transition: background 1.2s ease-in-out;
 `;
 
-export const ContentsTitle = styled.h2<{ theme: Theme }>(
-  ({ theme }) => css`
+export const ContentsTitle = styled.h2<{ theme: Theme; fontSize?: number }>(
+  ({ theme, fontSize = 3 }) => css`
     width: 100%;
     font-weight: 600;
-    font-size: 3vw;
+    font-size: ${fontSize}vw;
     font-family: ${theme.mode.font.component.title};
 
     text-align: left;
-  `,
-);
-
-export const CarouselContainer = styled.div<{ width: number }>(
-  ({ width }) => css`
-    width: ${width}px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 40px;
   `,
 );
