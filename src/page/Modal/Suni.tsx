@@ -1,76 +1,22 @@
-/** @jsxImportSource @emotion/react */
-import { css, useTheme } from "@emotion/react";
-import {
-  ContentsContainer,
-  ContentsTitle,
-  PageContainer,
-} from "../component/layouts";
-import { useWindowContext } from "../context/WindowContext";
-import styled from "@emotion/styled";
-import { useState } from "react";
-import { LanguageButton } from "../component/LanguageButton";
+import { useTheme } from "@emotion/react";
+import { ContentsContainer, ContentsTitle } from "../../component/layouts";
+import { Container, Description, Language } from "./Base";
 
-export function Suni() {
-  const { windowWidth } = useWindowContext();
-  const [language, setLanguage] = useState<"en" | "jp" | "kr">("en");
-  const theme = useTheme();
-
-  const languageChange = (lang: "en" | "jp" | "kr") => {
-    if (lang === "en") {
-      setLanguage("jp");
-    } else if (lang === "jp") {
-      setLanguage("kr");
-    } else {
-      setLanguage("en");
-    }
-  };
-
-  const contents = () => {
-    switch (language) {
-      case "en":
-        return <EngVersion />;
-      case "jp":
-        return <JpVersion />;
-      case "kr":
-        return <KrVersion />;
-    }
+export function Suni(props: { language: Language }) {
+  const components = {
+    en: <EnVersion />,
+    jp: <JpVersion />,
+    kr: <KrVersion />,
   };
 
   return (
     <>
-      <PageContainer
-        className="text-white p-14"
-        width={windowWidth * 0.95}
-        css={css`
-          gap: 20px;
-          font-family: ${theme.mode.font.component.title};
-        `}
-      >
-        {contents()}
-      </PageContainer>
-      <LanguageButton
-        language={language}
-        change={() => languageChange(language)}
-      ></LanguageButton>
+      <Container>{components[props.language]}</Container>
     </>
   );
 }
 
-const Description = styled.div(
-  ({ theme }) => css`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-
-    gap: 10px;
-
-    font-weight: 300;
-    font-family: ${theme.mode.font.component.description};
-  `,
-);
-
-function EngVersion() {
+function EnVersion() {
   const theme = useTheme();
   return (
     <>
@@ -109,13 +55,7 @@ function EngVersion() {
       <ContentsContainer>
         <ContentsTitle theme={theme}>Education</ContentsTitle>
         <Description>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               KAIST RESEARCH: Science Talent Education Program
             </li>
@@ -133,42 +73,20 @@ function EngVersion() {
       </ContentsContainer>
       <ContentsContainer>
         <Description>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             2016 – 2019 | Military Service
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Participated in the MIMS (Military Intelligence Management System)
               and SIMS (Signal Information Analysis Program) projects, gaining
               hands-on experience in Java and React.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             2022 – 2023 | Team Lead, Development Team 2 | Klim Solutions
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Joined as a team lead, leveraging my military development
               experience.
@@ -177,21 +95,10 @@ function EngVersion() {
               Led the Belleforet Hybrid App development project.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             Jun 2023 – Jun 2024 | Senior Developer | Nexus (UBase Subsidiary)
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Transitioned to Nexus due to Klim Solutions’ insistence on legacy
               eGov frameworks.
@@ -201,61 +108,28 @@ function EngVersion() {
               front-end development for U Rms independently.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             Jun 2024 – Sep 2024 | Front-End Developer | Team Monolith
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Joined to develop a Digital Textbook platform after being invited
               by Team Monolith.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             Sep 2024 – Jan 2025 | Full-Stack Developer | StyleLeader
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Contributed to the StyleLeader site development while attending
               overseas training.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             Dec 2024 – Present | Front-End Developer | JP (Travel Review SNS)
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Currently developing a Google Maps–based travel review social
               networking app, scheduled to launch in mid-January.
@@ -295,13 +169,7 @@ function JpVersion() {
       <ContentsContainer>
         <ContentsTitle theme={theme}>Education</ContentsTitle>
         <Description>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">KAIST RESEARCH：科学英才教育プログラム</li>
             <li className="pb-2">Soongsil University：経営学専攻</li>
             <li className="pb-2">
@@ -315,62 +183,40 @@ function JpVersion() {
       </ContentsContainer>
       <ContentsContainer>
         <Description>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             2016 – 2019｜軍務
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               MIMS（軍事情報管理システム）および
               SIMS（信号情報分析プログラム）プロジェクトに参加し、Java と React
               の実務経験を習得。
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
-            2022 – 2023｜開発2チーム チームリーダー｜Klim Solutions
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2022 – 2022 | Server Developer, 개발팀 | Neaco
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              政府主催の貿易教育プログラム WTA に参加し、3か月間
+              Avocado（アボカド） のプロジェクト業務をサポートしました。
+              本来は貿易関連の業務を行う予定でしたが、同社には開発チームの人員が不足していたため、開発チームの一員として業務に従事しました。
+              担当した主な業務は Neacoアプリの開発 です。
+            </li>
+          </ul>
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2022 – 2023 | Team Lead, Development Team 2 | Klim Solutions
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               軍での開発経験を活かして Klim Solutions に入社し、Belleforet
               ハイブリッドアプリ開発を総括。
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
-            2023年6月 – 2024年6月｜シニア開発者｜Nexus（UBase 子会社）
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2023年6月 – 2024年6月｜Senior Developer｜Nexus（UBase 子会社）
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Klim Solutions のレガシー eGov フレームワーク固執を理由に Nexus
               へ転職。
@@ -380,59 +226,26 @@ function JpVersion() {
               のフロントエンドを単独で開発。
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
-            2024年6月 – 2024年9月｜フロントエンド開発者｜Team Monolith
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2024年6月 – 2024年9月｜Front-End Developer｜Team Monolith
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               招待を受け、デジタル教科書プラットフォームの開発に参加。
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
-            2024年9月 – 2025年1月｜フルスタック開発者｜StyleLeader
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2024年9月 – 2025年1月｜Full-Stack Developer｜StyleLeader
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               海外研修と並行して StyleLeader サイト開発に従事。
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
-            2024年12月 – 現在｜フロントエンド開発者 | JP （旅行レビューSNS）
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2024年12月 – 現在｜Full-Stack Developer | JP （旅行レビューSNS）
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Google Maps API
               を活用した旅行レビューSNSアプリを開発中。1月中旬にリリース予定。
@@ -482,13 +295,7 @@ function KrVersion() {
       <ContentsContainer>
         <ContentsTitle theme={theme}>Education</ContentsTitle>
         <Description>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">KAIST RESEARCH: 과학 영재 교육</li>
             <li className="pb-2">숭실대학교: 경영학 전공</li>
             <li className="pb-2">
@@ -502,63 +309,41 @@ function KrVersion() {
       </ContentsContainer>
       <ContentsContainer>
         <Description>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             2016 – 2019 | Military Service
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               군에서 Java 및 React를 활용한 MIMS (군사첩보유통체계) 및 TAMS
               (신호정보 분석 프로그램) 사업에 참여하였습니다.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2022 – 2022 | Server Developer, 개발팀 | Neaco
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              WTA 라는 정부 주관 무역 교육에 참여하였으며, 3개월 동안 아보카도의
+              프로젝트 업무를 도왔습니다. 무역으로 업무를 진행했어야하나, 해당
+              회사의 개발팀에 인력이 없어 개발팀으로 업무를 진행하였습니다.
+              업무는 Neaco 어플 개발입니다.
+            </li>
+          </ul>
+          <ContentsTitle fontSize={2.4} theme={theme}>
             2022 – 2023 | Team Lead, 개발 2팀 | 크림 솔루션
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               군에서의 경력을 인정받아 INQ 본부 개발2팀 팀장 직책으로
               크림솔루션에 입사하였으며, Belleforet 하이브리드앱 제작을
               총괄하였습니다.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             Jun 2023 – Jun 2024 | DT 서비스 개발팀 선임 | Nexus (UBase
             Subsidiary)
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               크림솔루션의 개발방침이 egov를 고집하는 관계로 UBase의 자회사인
               Nexus로 선임으로 이직하였습니다.
@@ -568,21 +353,10 @@ function KrVersion() {
               단독으로 진행하였습니다.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             Jun 2024 – Sep 2024 | Front-End 개발자 | 팀모노리스
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Nexus는 솔루션 회사의 특성 상 폐쇄망에서의 개발이 주로 이루어지며,
               회사의 메인 솔루션인 상담 솔루션은 웹앱이 아닌 C++ 엔진이 기반인
@@ -591,42 +365,20 @@ function KrVersion() {
               팀모노리스에 입사하여 디지털 교과서 사업에 참여하였습니다.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             Sep 2024 – Jan 2025 | Full-Stack 개발자 | StyleLeader
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               디지털교과서 사업이 종료되고, 스타일리더의 연락을 받아 해외에서
               연수를 진행하면서, 해외에서 스타일리더 사이트 개발을
               진행하였습니다.
             </li>
           </ul>
-          <ContentsTitle
-            theme={theme}
-            css={css`
-              font-size: 2.4vw;
-            `}
-          >
+          <ContentsTitle fontSize={2.4} theme={theme}>
             Dec 2024 – Present | Front-End 개발자 | JP (Travel Review SNS)
           </ContentsTitle>
-          <ul
-            className="text-left text-2xl"
-            css={css`
-              list-style: unset;
-              padding-left: 1.4rem;
-            `}
-          >
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Google Map API 기반 여행 리뷰 SNS 어플, 제피 개발 중
             </li>

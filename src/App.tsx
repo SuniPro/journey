@@ -12,7 +12,6 @@ import { GlobalStyled } from "./component/layouts";
 import { AppleStyle } from "./page/AppleStyle";
 import { WindowContextProvider } from "./context/WindowContext";
 import { NetflixStyle } from "./page/NetflixStyle";
-import { Suni } from "./page/Suni";
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -31,7 +30,6 @@ function App() {
               <CursorProvider>
                 <Routes>
                   <Route path="/" element={<Main />}></Route>
-                  <Route path="/suni" element={<Suni />}></Route>
                   <Route path="/apple" element={<AppleStyle />}></Route>
                   <Route path="/netflix" element={<NetflixStyle />}></Route>
                 </Routes>
