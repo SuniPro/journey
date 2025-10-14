@@ -1,9 +1,6 @@
 import { useState, useCallback } from "react";
 import { useDrag, useWheel } from "@use-gesture/react";
 
-const speedWheel = 0.02;
-const speedDrag = -0.1;
-
 type CarouselGesture = {
   progress: number;
   activeIndex: number;
@@ -11,7 +8,16 @@ type CarouselGesture = {
   wheelBind: ReturnType<typeof useWheel>;
 };
 
-export function useCarouselGesture(slideCount: number): CarouselGesture {
+type Options = {
+  disabled?: boolean; // true면 제스처 완전 비활성
+  speedWheel?: number;
+  speedDrag?: number;
+};
+
+export function useCarouselGesture(
+  slideCount: number,
+  { disabled = false, speedWheel = 0.02, speedDrag = -0.1 }: Options = {},
+): CarouselGesture {
   const [progress, setProgress] = useState(0);
 
   const clampProgress = useCallback(
@@ -30,14 +36,23 @@ export function useCarouselGesture(slideCount: number): CarouselGesture {
   //   return () => clearTimeout(timeout);
   // }, [progress, slideCount]);
 
-  const wheelBind = useWheel(({ delta: [, dy] }) => {
-    setProgress((prev) => clampProgress(prev + dy * speedWheel));
-  });
+  const wheelBind = useWheel(
+    ({ delta: [, dy] }) => {
+      setProgress((prev) => clampProgress(prev + dy * speedWheel));
+    },
+    {
+      enabled: !disabled,
+      eventOptions: { passive: true }, // 필요 시 false로 바꾸고 preventDefault 가능
+    },
+  );
 
-  const dragBind = useDrag(({ movement: [mx], memo = 0 }) => {
-    setProgress((prev) => clampProgress(prev + (mx - memo) * speedDrag));
-    return mx;
-  });
+  const dragBind = useDrag(
+    ({ movement: [mx], memo = 0 }) => {
+      setProgress((prev) => clampProgress(prev + (mx - memo) * speedDrag));
+      return mx;
+    },
+    { enabled: !disabled },
+  );
 
   return { progress, activeIndex, wheelBind, dragBind };
 }

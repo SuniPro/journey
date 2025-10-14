@@ -8,12 +8,15 @@ import {
 
 const WindowContext = createContext<{
   windowWidth: number;
+  windowHeight: number;
 } | null>(null);
 
 export function WindowContextProvider({ children }: { children: ReactNode }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
   const handleResize = () => {
+    setWindowHeight(window.innerHeight);
     setWindowWidth(window.innerWidth);
   };
 
@@ -26,7 +29,7 @@ export function WindowContextProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <WindowContext.Provider value={{ windowWidth }}>
+    <WindowContext.Provider value={{ windowWidth, windowHeight }}>
       {children}
     </WindowContext.Provider>
   );

@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
-import { Dispatch, type ReactNode, SetStateAction } from "react";
+import { Dispatch, type ReactNode, SetStateAction, useState } from "react";
 import { css, useTheme } from "@emotion/react";
 import { useCarouselGesture } from "../../hooks/useCarouselGesture";
 import { WheelSlideAssetType } from "./slideAssets";
-import { useNavigate } from "react-router-dom";
+import { Base } from "../../page/Modal/Base";
 
 export function WheelSlider(props: {
   width: number;
@@ -16,9 +16,14 @@ export function WheelSlider(props: {
   };
 }) {
   const { width, height, assets, selectedState } = props;
+  const [modal, setModal] = useState(false);
+
+  const modalOpen = () => setModal(true);
+  const modalClose = () => setModal(false);
 
   const { activeIndex, dragBind, wheelBind } = useCarouselGesture(
     assets.length,
+    { disabled: modal },
   );
 
   return (
@@ -37,6 +42,8 @@ export function WheelSlider(props: {
           index={index}
           activeIndex={activeIndex}
           selectedState={selectedState}
+          modalOpen={modalOpen}
+          modalClose={modalClose}
         />
       ))}
     </div>
@@ -50,20 +57,30 @@ export function SliderItem(props: {
   size: number;
   index: number;
   activeIndex: number;
+  modalOpen: () => void;
+  modalClose: () => void;
   children?: ReactNode;
   selectedState: {
     selected: string;
     setSelected: Dispatch<SetStateAction<string>>;
   };
 }) {
-  const { slide, width, height, index, size, activeIndex, selectedState } =
-    props;
+  const {
+    slide,
+    width,
+    height,
+    index,
+    size,
+    activeIndex,
+    selectedState,
+    modalOpen,
+    modalClose,
+  } = props;
+  const [open, setOpen] = useState<boolean>(false);
   const { title, num, img, link } = slide;
   const { setSelected } = selectedState;
 
   const theme = useTheme();
-
-  const navigate = useNavigate();
 
   const zIndex = size - Math.abs(index - activeIndex);
   const distance = index - activeIndex;
@@ -72,59 +89,63 @@ export function SliderItem(props: {
   const rot = distance * 12;
   const opacity = Math.max(0, 1 - Math.abs(distance) * 0.2);
 
-  const pageMove = () => {
-    if (link) {
-      if (link.includes("https")) {
-        window.open(link);
-      } else {
-        navigate(link);
-      }
-    }
-  };
-
   return (
-    <Item
-      x={x}
-      y={y}
-      zIndex={zIndex}
-      rot={rot}
-      width={width}
-      height={height}
-      active={size === zIndex}
-      onClick={pageMove}
-    >
-      <ItemBox opacity={opacity} onClick={() => setSelected(title)}>
-        <div
-          className="absolute left-5 bottom-5 text-white text-lg font-bold z-[1]"
-          css={css`
-            font-size: clamp(20px, 3vw, 30px);
-            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
-            opacity: ${opacity};
-            font-family: ${theme.mode.font.main.component.description};
-          `}
-        >
-          {title}
-        </div>
+    <>
+      <Item
+        x={x}
+        y={y}
+        zIndex={zIndex}
+        rot={rot}
+        width={width}
+        height={height}
+        active={size === zIndex}
+        onClick={() => {
+          setOpen(true);
+          modalOpen();
+        }}
+      >
+        <ItemBox opacity={opacity} onClick={() => setSelected(title)}>
+          <div
+            className="absolute left-5 bottom-5 text-white text-lg font-bold z-[1]"
+            css={css`
+              font-size: clamp(20px, 3vw, 30px);
+              text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+              transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+              opacity: ${opacity};
+              font-family: ${theme.mode.font.main.component.description};
+            `}
+          >
+            {title}
+          </div>
 
-        <div
-          className="absolute left-5 top-[10px] text-white z-[1]"
-          css={css`
-            font-size: clamp(20px, 10vw, 80px);
-            transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
-            opacity: ${opacity};
-            font-family: ${theme.mode.font.main.component.description};
-          `}
-        >
-          {num}
-        </div>
-        <img
-          src={img}
-          alt={title}
-          className="w-full h-full object-cover pointer-events-none"
-        />
-      </ItemBox>
-    </Item>
+          <div
+            className="absolute left-5 top-[10px] text-white z-[1]"
+            css={css`
+              font-size: clamp(20px, 10vw, 80px);
+              transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+              opacity: ${opacity};
+              font-family: ${theme.mode.font.main.component.description};
+            `}
+          >
+            {num}
+          </div>
+          <img
+            src={img}
+            alt={title}
+            className="w-full h-full object-cover pointer-events-none"
+          />
+        </ItemBox>
+      </Item>
+      <Base
+        open={open}
+        close={() => {
+          setOpen(false);
+          modalClose();
+        }}
+        selectedState={selectedState}
+        link={link}
+      />
+    </>
   );
 }
 

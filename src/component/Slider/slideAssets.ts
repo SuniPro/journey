@@ -57,36 +57,29 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     link: "https://about.codle.io/ko/",
   },
   {
-    title: "JP",
-    num: "08",
-    img: anycastLogo,
-  },
-  {
     title: "icoins",
-    num: "09",
+    num: "08",
     img: icoins,
     link: "https://icoins.info/",
   },
   {
     title: "anycast",
-    num: "10",
+    num: "09",
     img: anycastLogo,
   },
   {
     title: "AppleStyle",
-    num: "11",
+    num: "10",
     img: AppleWallpaper,
-    link: "/apple",
   },
   {
     title: "NetflixStyle",
-    num: "12",
+    num: "11",
     img: netflix,
-    link: "/netflix",
   },
   {
     title: "Server API",
-    num: "13",
+    num: "12",
     img: githubLogo,
   },
 ];
