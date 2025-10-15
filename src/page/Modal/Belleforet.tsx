@@ -3,7 +3,8 @@ import { Container, Description, Language } from "./Base";
 import { useTheme } from "@emotion/react";
 import Button from "@mui/material/Button";
 
-export function Belleforet(props: { language: Language }) {
+export function Belleforet(props: { language: Language; link?: string }) {
+  const { language, link } = props;
   const components = {
     en: <EnVersion />,
     jp: <JpVersion />,
@@ -15,13 +16,14 @@ export function Belleforet(props: { language: Language }) {
       <Container>
         <ContentsContainer>
           <Button
+            sx={{ width: "94%", zIndex: "0" }}
             variant="contained"
-            onClick={() => window.open("https://belleforetresort.com/")}
+            onClick={() => window.open(link)}
           >
             Move to Page
           </Button>
         </ContentsContainer>
-        {components[props.language]}
+        {components[language as Language]}
       </Container>
     </>
   );

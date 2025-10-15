@@ -2,16 +2,18 @@ import { css, Theme, useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import HomeIcon from "@mui/icons-material/Home";
 import Button from "@mui/material/Button";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export function HomeButton() {
   const theme = useTheme();
-  const navigate = useNavigate();
+  const [uri] = useState(
+    `${window.location.protocol}//${window.location.hostname}:${window.location.port}`,
+  );
 
   return (
     <ChatContainer>
       <DMButton theme={theme}>
-        <label onClick={() => navigate("/")}>
+        <label onClick={() => window.location.replace(uri)}>
           <StyledHomeIcon fontSize="large" theme={theme} />
         </label>
       </DMButton>

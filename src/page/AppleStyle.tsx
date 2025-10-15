@@ -6,7 +6,7 @@ import {
 } from "../component/layouts";
 import { css, useTheme } from "@emotion/react";
 import { useWindowContext } from "../context/WindowContext";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import styled from "@emotion/styled";
@@ -14,8 +14,17 @@ import { AdCardSection } from "../component/AdCardSection";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { ScrollScaleVideo } from "../component/Video/ScrollScaleVideo";
 import { HomeButton } from "../component/HomeButton";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function AppleStyle() {
+  const locate = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (locate.pathname === "/") {
+      navigate("apple");
+    }
+  }, [locate.pathname, navigate]);
+
   const theme = useTheme();
 
   const { windowWidth } = useWindowContext();
@@ -143,7 +152,7 @@ export function AppleStyle() {
         </ContentsContainer>
         <ContentsContainer
           css={css`
-            padding: 4vh 0;
+            padding: 6vh 0;
           `}
         >
           <ScrollScaleVideo windowWidth={windowWidth} />

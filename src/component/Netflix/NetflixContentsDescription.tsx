@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { Fragment, ReactNode } from "react";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import { FuncItem } from "../Button/Button";
+import EvolutionLogo from "../../assets/image/brand/evolution_logo.svg";
 
 export function NetflixContents(
   imageList: string[],
@@ -45,7 +46,7 @@ export function NetflixContents(
                   height: 5vh;
                   filter: invert(100%);
                 `}
-                src="https://www.evolution.com/wp-content/themes/evolution-wp/assets/img/evolution_logo.svg"
+                src={EvolutionLogo}
                 alt="logo"
               />
             </div>
