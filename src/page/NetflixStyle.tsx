@@ -3,8 +3,17 @@ import { NetflixStyleCardFlip } from "../component/Card/NetflixStyleCardFlip";
 import { HomeButton } from "../component/HomeButton";
 import { ContentsContainer, PageContainer } from "../component/layouts";
 import { useWindowContext } from "../context/WindowContext";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export function NetflixStyle() {
+  const locate = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (locate.pathname === "/") {
+      navigate("netflix");
+    }
+  }, [locate.pathname, navigate]);
   const { windowWidth } = useWindowContext();
   return (
     <>
@@ -21,7 +30,7 @@ export function NetflixStyleCardFlip() {
     const [videoFadingOut, setVideoFadingOut] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
-    const flipRef = useRef<HTMLDivElement>(null);
+    const flipRef = useRef<HTMLDivElement>null;
 
     const { windowWidth } = useWindowContext();
 

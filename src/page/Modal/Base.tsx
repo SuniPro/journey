@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { CustomModal } from "../../component/Modal";
 import { Suni } from "./Suni";
 import { css, useTheme } from "@emotion/react";
@@ -8,6 +8,13 @@ import styled from "@emotion/styled";
 import { LanguageButton } from "../../component/LanguageButton";
 import { Neaco } from "./Neaco";
 import { Belleforet } from "./Belleforet";
+import { MarketKully } from "./MarketKully";
+import { URMS } from "./URMS";
+import { UAnalyzer } from "./UAnalyzer";
+import { Codle } from "./Codle";
+import { Icoins } from "./Icoins";
+import { Anycast } from "./Anycast";
+import { useNavigate } from "react-router-dom";
 
 export type Language = "en" | "jp" | "kr";
 
@@ -20,9 +27,11 @@ export function Base(props: {
   };
   link?: string;
 }) {
-  const { open, close } = props;
+  const { open, close, link } = props;
   const { selected } = props.selectedState;
   const theme = useTheme();
+
+  const navigate = useNavigate();
 
   const [language, setLanguage] = useState<Language>("en");
 
@@ -43,9 +52,37 @@ export function Base(props: {
       case "Neaco":
         return <Neaco language={language} />;
       case "BelleForetResort":
-        return <Belleforet language={language} />;
+        return <Belleforet language={language} link={link} />;
+      case "MarketKully":
+        return <MarketKully language={language} />;
+      case "URMS":
+        return <URMS language={language} />;
+      case "UAnalyzer":
+        return <UAnalyzer language={language} />;
+      case "codle":
+        return <Codle language={language} link={link} />;
+      case "Icoins":
+        return <Icoins language={language} link={link} />;
+      case "anycast":
+        return <Anycast language={language} link={link} />;
+      case "AppleStyle":
+      case "NetflixStyle":
+        return <></>;
     }
   };
+
+  const notModalContents =
+    selected === "AppleStyle" || selected === "NetflixStyle";
+
+  useEffect(() => {
+    if (selected === "AppleStyle" || selected === "NetflixStyle") {
+      selected === "AppleStyle" ? navigate("apple") : navigate("netflix");
+    }
+  }, [close, navigate, selected]);
+
+  if (notModalContents) {
+    return <></>;
+  }
 
   return (
     <>
@@ -61,7 +98,7 @@ export function Base(props: {
           css={css`
             width: 90%;
             margin: 5% 0 5%;
-            padding: 50px;
+            padding: 2.6%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -83,6 +120,7 @@ export function Base(props: {
     </>
   );
 }
+
 const CancelBox = styled.div`
   position: fixed;
   top: 7%;

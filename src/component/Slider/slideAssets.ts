@@ -66,6 +66,7 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "anycast",
     num: "09",
     img: anycastLogo,
+    link: "https://anycast.world/",
   },
   {
     title: "AppleStyle",

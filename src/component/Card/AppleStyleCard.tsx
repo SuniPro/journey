@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, Theme } from "@emotion/react";
 import styled from "@emotion/styled";
-import { RefObject, useState } from "react";
-import { CustomModal } from "../Modal";
+import { RefObject } from "react";
 
 export interface collectionContentsProps {
   image: string;
@@ -18,11 +17,10 @@ export function AppleStyleCard(props: {
   isWhite?: boolean;
 }) {
   const { ref, collectionContents, theme, isWhite = false } = props;
-  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <CollectionWrapper theme={theme} onClick={() => setOpen(true)} ref={ref}>
+      <CollectionWrapper theme={theme} ref={ref}>
         <ImageCase imageUrl={collectionContents.image} theme={theme} />
         <InfoLine isWhite={isWhite}>
           <Title>{collectionContents.title}</Title>
@@ -35,17 +33,6 @@ export function AppleStyleCard(props: {
           </div>
         </InfoLine>
       </CollectionWrapper>
-      <CustomModal
-        open={open}
-        close={() => setOpen(false)}
-        children={
-          <Detail
-            collectionContents={collectionContents}
-            theme={theme}
-            isWhite={isWhite}
-          />
-        }
-      />
     </>
   );
 }
@@ -111,142 +98,142 @@ const Description = styled.span`
   font-size: 24px;
 `;
 
-function Detail(props: {
-  collectionContents: collectionContentsProps;
-  theme: Theme;
-  isWhite: boolean;
-}) {
-  const { collectionContents, theme, isWhite } = props;
-
-  return (
-    <DetailContainer theme={theme}>
-      <HeaderLine>
-        <Title style={{ marginBottom: 20 }}>{collectionContents.title}</Title>
-        <DetailDescription>{collectionContents.description}</DetailDescription>
-      </HeaderLine>
-      <DetailContentsWrapper
-        theme={theme}
-        colors={collectionContents.detail.color}
-      >
-        <div
-          css={css`
-            width: 90%;
-          `}
-        >
-          {collectionContents.detail.detailContents
-            .split("\n")
-            .map((line, index) => (
-              <span
-                key={index}
-                css={css`
-                  text-align: left;
-                  width: 100%;
-                `}
-              >
-                {line} <br />
-              </span>
-            ))}
-        </div>
-        <DetailImageCase
-          src={collectionContents.detail.image}
-          css={
-            isWhite
-              ? css`
-                  filter: invert(1);
-
-                  margin-top: 10%;
-                  width: 20%;
-                `
-              : css``
-          }
-        />
-      </DetailContentsWrapper>
-    </DetailContainer>
-  );
-}
-
-const DetailContainer = styled.div<{ theme: Theme }>(
-  ({ theme }) => css`
-    height: 100%;
-    width: 100%;
-
-    padding: 20px 10px 0 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    font-family: ${theme.mode.font.card.title};
-
-    box-sizing: border-box;
-
-    overflow: scroll;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  `,
-);
-
-const HeaderLine = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-
-  margin-bottom: 50px;
-`;
-
-const DetailDescription = styled(Description)`
-  font-size: 3vw;
-`;
-
-const DetailContentsWrapper = styled.div<{ theme: Theme; colors?: string[] }>(
-  ({ theme, colors }) => css`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid transparent; // 필수!
-    border-radius: 25px; // 꼭 background와 일치해야 깔끔
-
-    margin-bottom: 20px;
-
-    gap: 10px;
-
-    font-size: 1.5vw;
-
-    padding: 50px 10px;
-    box-sizing: border-box;
-    ${colors
-      ? css`
-          background:
-            linear-gradient(#000000, #000000) padding-box,
-            linear-gradient(
-                -120deg,
-                ${colors[0]},
-                ${colors[1]} 34%,
-                ${colors[2]} 68%,
-                ${colors[3]}
-              )
-              border-box;
-          background-origin: border-box;
-          background-clip: padding-box, border-box;
-          box-shadow:
-            inset 0 0 20px ${colors[0]},
-            inset 0 0 20px ${colors[3]};
-        `
-      : css`
-          background-color: ${theme.colors.ashGray};
-        `} @media ${theme.deviceSize.phone} {
-      font-size: 12px;
-    }
-  `,
-);
-
-const DetailImageCase = styled.img`
-  width: 90%;
-  border-radius: 25px;
-`;
+// function Detail(props: {
+//   collectionContents: collectionContentsProps;
+//   theme: Theme;
+//   isWhite: boolean;
+// }) {
+//   const { collectionContents, theme, isWhite } = props;
+//
+//   return (
+//     <DetailContainer theme={theme}>
+//       <HeaderLine>
+//         <Title style={{ marginBottom: 20 }}>{collectionContents.title}</Title>
+//         <DetailDescription>{collectionContents.description}</DetailDescription>
+//       </HeaderLine>
+//       <DetailContentsWrapper
+//         theme={theme}
+//         colors={collectionContents.detail.color}
+//       >
+//         <div
+//           css={css`
+//             width: 90%;
+//           `}
+//         >
+//           {collectionContents.detail.detailContents
+//             .split("\n")
+//             .map((line, index) => (
+//               <span
+//                 key={index}
+//                 css={css`
+//                   text-align: left;
+//                   width: 100%;
+//                 `}
+//               >
+//                 {line} <br />
+//               </span>
+//             ))}
+//         </div>
+//         <DetailImageCase
+//           src={collectionContents.detail.image}
+//           css={
+//             isWhite
+//               ? css`
+//                   filter: invert(1);
+//
+//                   margin-top: 10%;
+//                   width: 20%;
+//                 `
+//               : css``
+//           }
+//         />
+//       </DetailContentsWrapper>
+//     </DetailContainer>
+//   );
+// }
+//
+// const DetailContainer = styled.div<{ theme: Theme }>(
+//   ({ theme }) => css`
+//     height: 100%;
+//     width: 100%;
+//
+//     padding: 20px 10px 0 40px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: flex-start;
+//     font-family: ${theme.mode.font.card.title};
+//
+//     box-sizing: border-box;
+//
+//     overflow: scroll;
+//     -ms-overflow-style: none;
+//
+//     &::-webkit-scrollbar {
+//       display: none;
+//     }
+//   `,
+// );
+//
+// const HeaderLine = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-items: flex-start;
+//   width: 100%;
+//
+//   margin-bottom: 50px;
+// `;
+//
+// const DetailDescription = styled(Description)`
+//   font-size: 3vw;
+// `;
+//
+// const DetailContentsWrapper = styled.div<{ theme: Theme; colors?: string[] }>(
+//   ({ theme, colors }) => css`
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     border: 2px solid transparent; // 필수!
+//     border-radius: 25px; // 꼭 background와 일치해야 깔끔
+//
+//     margin-bottom: 20px;
+//
+//     gap: 10px;
+//
+//     font-size: 1.5vw;
+//
+//     padding: 50px 10px;
+//     box-sizing: border-box;
+//     ${colors
+//       ? css`
+//           background:
+//             linear-gradient(#000000, #000000) padding-box,
+//             linear-gradient(
+//                 -120deg,
+//                 ${colors[0]},
+//                 ${colors[1]} 34%,
+//                 ${colors[2]} 68%,
+//                 ${colors[3]}
+//               )
+//               border-box;
+//           background-origin: border-box;
+//           background-clip: padding-box, border-box;
+//           box-shadow:
+//             inset 0 0 20px ${colors[0]},
+//             inset 0 0 20px ${colors[3]};
+//         `
+//       : css`
+//           background-color: ${theme.colors.ashGray};
+//         `} @media ${theme.deviceSize.phone} {
+//       font-size: 12px;
+//     }
+//   `,
+// );
+//
+// const DetailImageCase = styled.img`
+//   width: 90%;
+//   border-radius: 25px;
+// `;
