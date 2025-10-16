@@ -33,10 +33,12 @@ function EnVersion() {
             I also have extensive experience refactoring systems to align with a
             company’s development philosophy and turning them into internal
             open-source projects. <br /> <br />
-            For example, in the Nexus Community project and my current app,
-            JP, I developed a custom library called{" "}
-            <strong>customFetchBase</strong> to solve issues such as caching in
-            Next.js 12 fetch and baseURL configuration. <br />
+            For example, in the Nexus Community project and my current app, JP,
+            I developed a custom library called <strong>
+              customFetchBase
+            </strong>{" "}
+            to solve issues such as caching in Next.js 12 fetch and baseURL
+            configuration. <br />
             This library independently handles request/response interception and
             baseURL management, and was deployed for internal use across
             multiple teams. <br /> <br />
@@ -215,8 +217,8 @@ function JpVersion() {
             また、会社の開発哲学に合わせてリファクタリングし、社内で利用できるオープンソースとして構築した経験も多数あります。
             <br />
             <br />
-            例えば、Nexus Community や現在開発中の JP アプリでは、Next.js 12
-            の fetch キャッシュ問題や baseURL 設定問題を解決するため、
+            例えば、Nexus Community や現在開発中の JP アプリでは、Next.js 12 の
+            fetch キャッシュ問題や baseURL 設定問題を解決するため、
             <br />
             自ら <strong>customFetchBase</strong>{" "}
             というライブラリを開発し、リクエスト/
