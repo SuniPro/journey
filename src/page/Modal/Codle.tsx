@@ -1,9 +1,10 @@
 import { Container, Description, Language } from "./Base";
 import { useTheme } from "@emotion/react";
 import { ContentsContainer, ContentsTitle } from "../../component/layouts";
+import Button from "@mui/material/Button";
 
 export function Codle(props: { language: Language; link?: string }) {
-  const { language } = props;
+  const { language, link } = props;
   const components = {
     en: <EnVersion />,
     jp: <JpVersion />,
@@ -12,7 +13,18 @@ export function Codle(props: { language: Language; link?: string }) {
 
   return (
     <>
-      <Container>{components[language as Language]}</Container>
+      <Container>
+        <ContentsContainer>
+          <Button
+            sx={{ width: "94%", zIndex: "0" }}
+            variant="contained"
+            onClick={() => window.open(link)}
+          >
+            Move to Page
+          </Button>
+        </ContentsContainer>
+        {components[language as Language]}
+      </Container>
     </>
   );
 }
