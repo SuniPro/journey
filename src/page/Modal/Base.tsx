@@ -123,7 +123,7 @@ export function Base(props: {
 
 const CancelBox = styled.div`
   position: fixed;
-  
+
   right: 6.5%;
   cursor: pointer;
 `;
