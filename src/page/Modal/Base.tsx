@@ -61,7 +61,7 @@ export function Base(props: {
         return <UAnalyzer language={language} />;
       case "codle":
         return <Codle language={language} link={link} />;
-      case "Icoins":
+      case "icoins":
         return <Icoins language={language} link={link} />;
       case "anycast":
         return <Anycast language={language} link={link} />;
@@ -87,9 +87,6 @@ export function Base(props: {
   return (
     <>
       <CustomModal open={open} close={close}>
-        <CancelBox>
-          <CancelIcon onClick={close} sx={{ fontSize: "30px" }} />
-        </CancelBox>
         <LanguageButton
           language={language}
           change={() => languageChange(language)}
@@ -98,7 +95,7 @@ export function Base(props: {
           css={css`
             width: 90%;
             margin: 5% 0 5%;
-            padding: 2.6%;
+            padding: 1.5% 2.6% 2.6% 2.6%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -107,6 +104,9 @@ export function Base(props: {
             border-radius: ${theme.borderRadius.roundedBox};
           `}
         >
+          <CancelBox>
+            <CancelIcon onClick={close} sx={{ fontSize: "30px" }} />
+          </CancelBox>
           <div
             css={css`
               height: 100%;
@@ -123,7 +123,7 @@ export function Base(props: {
 
 const CancelBox = styled.div`
   position: fixed;
-  top: 7%;
+
   right: 6.5%;
   cursor: pointer;
 `;

@@ -23,35 +23,38 @@ function EnVersion() {
       <ContentsContainer>
         <ContentsTitle theme={theme}>Who ?</ContentsTitle>
       </ContentsContainer>
+
       <ContentsContainer>
         <ContentsTitle theme={theme}>Self-Introduction</ContentsTitle>
         <Description>
           <span className="text-2xl">
-            I prefer not to simply follow existing code patterns but to explore
-            and apply new technologies and solutions. <br />I also have
-            extensive experience refactoring these solutions to align with a
-            company’s development philosophy and building them into internal
-            open-source tools.
-            <br /> <br />
-            For example, while working on the Nexus Community and the JP app, I
-            encountered caching issues with Next.js 12 fetch requests and base
-            URL configuration problems. <br />
-            <br />
-            To solve this, I independently developed and distributed a custom
-            library, customFetchBase, which handled response/request processing,
-            base URL setup, and interceptors, making it available for internal
-            use.
-            <br /> During the development of the JP app, I also started creating
-            an open-source solution to make it easier to implement Light Mode
-            and Dark Mode, which had not existed before in the project. As a
-            developer, I constantly strive to master and refine the use of
-            cutting-edge technologies.
-            <br /> I always ask myself questions like, "How can I make this code
-            more readable?" or "How can I make it more efficient?" — this
-            mindset defines me not just as a coder but as a true developer.
+            Rather than simply following existing code patterns, I enjoy
+            applying new technologies and creative solutions. <br />
+            I also have extensive experience refactoring systems to align with a
+            company’s development philosophy and turning them into internal
+            open-source projects. <br /> <br />
+            For example, in the Nexus Community project and my current app, JP,
+            I developed a custom library called <strong>
+              customFetchBase
+            </strong>{" "}
+            to solve issues such as caching in Next.js 12 fetch and baseURL
+            configuration. <br />
+            This library independently handles request/response interception and
+            baseURL management, and was deployed for internal use across
+            multiple teams. <br /> <br />
+            During JP’s development, I also worked on open-source tools to
+            simplify implementing <strong>Light</strong> and{" "}
+            <strong>Dark Mode</strong> — features that hadn’t previously existed
+            in the project. <br /> <br />
+            As a developer, I constantly strive to master the latest
+            technologies and push them further. <br />I always ask myself, “How
+            can I make this code more readable?” or “How can it be more
+            efficient?” — this mindset defines me not just as a coder, but as a
+            true developer, <strong>SOONHYUN SO</strong>.
           </span>
         </Description>
       </ContentsContainer>
+
       <ContentsContainer>
         <ContentsTitle theme={theme}>Education</ContentsTitle>
         <Description>
@@ -68,9 +71,11 @@ function EnVersion() {
           </ul>
         </Description>
       </ContentsContainer>
+
       <ContentsContainer>
         <ContentsTitle theme={theme}>Professional Experience</ContentsTitle>
       </ContentsContainer>
+
       <ContentsContainer>
         <Description>
           <ContentsTitle fontSize={2.4} theme={theme}>
@@ -78,61 +83,115 @@ function EnVersion() {
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              Participated in the MIMS (Military Intelligence Management System)
-              and SIMS (Signal Information Analysis Program) projects, gaining
-              hands-on experience in Java and React.
+              Participated in MIMS (Military Intelligence Management System) and
+              TAMS (Signal Information Analysis System) projects using Java and
+              React.
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2022 – 2023 | Team Lead, Development Team 2 | Klim Solutions
+            2022.08 – 2022.11 | Server Developer | Neaco
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              Joined as a team lead, leveraging my military development
-              experience.
-            </li>
-            <li className="pb-2">
-              Led the Belleforet Hybrid App development project.
+              Participated in the government-led WTA Trade Training Program and
+              supported Avocado’s project for three months. <br />
+              Initially assigned to trade-related tasks, but due to a shortage
+              of developers, I joined the development team and worked on the{" "}
+              <strong>Neaco App</strong>.
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            Jun 2023 – Jun 2024 | Senior Developer | Nexus (UBase Subsidiary)
+            2022.11 – 2023.05 | Team Lead, Development Team 2 | Cream Solution
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              Transitioned to Nexus due to Klim Solutions’ insistence on legacy
-              eGov frameworks.
-            </li>
-            <li className="pb-2">
-              Led projects including U Analysis and U Rms, handling the entire
-              front-end development for U Rms independently.
+              Promoted to Team Lead based on prior development experience in the
+              military. <br /> Oversaw the development of the{" "}
+              <strong>Belleforet Hybrid App</strong> as the lead developer.
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            Jun 2024 – Sep 2024 | Front-End Developer | Team Monolith
+            2023.06 – 2024.06 | Senior Developer | Nexus (UBase Subsidiary)
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              Joined to develop a Digital Textbook platform after being invited
-              by Team Monolith.
+              Transferred from Cream Solution due to its insistence on legacy
+              eGov frameworks. Joined Nexus under UBase as a senior developer.
+            </li>
+            <li className="pb-2">
+              Led projects including <strong>U Analysis</strong> and{" "}
+              <strong>U RMS</strong>, independently handling the front-end of U
+              RMS.
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            Sep 2024 – Jan 2025 | Full-Stack Developer | StyleLeader
+            2024.06 – 2024.09 | Front-End Developer | Team Monolith
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              Contributed to the StyleLeader site development while attending
-              overseas training.
+              Joined Team Monolith to develop the{" "}
+              <strong>Digital Textbook Platform</strong>, after being invited to
+              participate in the project.
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            Dec 2024 – Present | Front-End Developer | JP (Travel Review SNS)
+            2024.10 – 2025.01 | Full-Stack Developer | StyleLeader
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              Currently developing a Google Maps–based travel review social
-              networking app, scheduled to launch in mid-January.
+              After the digital textbook project concluded, I worked remotely
+              while abroad to develop the <strong>StyleLeader</strong> site.
+            </li>
+          </ul>
+
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2024 – Present | Front-End Developer | JP (Travel Review SNS)
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              Currently developing <strong>JP</strong>, a travel review SNS
+              based on Google Maps API.
+            </li>
+          </ul>
+
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025.02 – 2025.06 | Full-Stack Developer | Internal Groupware
+            Systems
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              Worked as a freelancer, building groupware systems for early-stage
+              international startups.
+            </li>
+          </ul>
+
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025.06 – 2025.06 | Full-Stack Developer | Sports & Streaming
+            Platform
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              As a freelancer, developed a platform that allows users to watch
+              and record live streams from services such as{" "}
+              <strong>Soop</strong>, <strong>Chzzk</strong>, and various sports
+              networks worldwide.
+            </li>
+          </ul>
+
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025.06 – 2025.06 | Full-Stack Developer | Cryptocurrency Exchange
+            Platform
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              Developed a peer-to-peer cryptocurrency trading platform with
+              integrated loan functionality, enabling easy person-to-person coin
+              exchanges.
             </li>
           </ul>
         </Description>
@@ -148,107 +207,161 @@ function JpVersion() {
       <ContentsContainer>
         <ContentsTitle theme={theme}>Who ?</ContentsTitle>
       </ContentsContainer>
+
       <ContentsContainer>
-        <ContentsTitle theme={theme}>Self-Introduction</ContentsTitle>
+        <ContentsTitle theme={theme}>自己紹介</ContentsTitle>
         <Description>
           <span className="text-2xl">
-            私は既存のコードパターンに従うだけでなく、新しい技術や解決策を積極的に探求し、導入することを好みます。さらに、これらを会社の開発理念に沿った形でリファクタリングし、社内オープンソースとして構築した経験も多数あります。
-            <br /> <br />
-            例えば、Nexus CommunityやJPアプリの開発中に、Next.js 12 の fetch
-            リクエストにおけるキャッシュ問題や baseURL
-            設定の課題に直面しました。これを解決するために、レスポンス／リクエスト処理や
-            baseURL 設定、インターセプター機能を含む customFetchBase
-            という独自ライブラリを開発し、社内向けに配布しました。
-            <br /> <br /> また、JP
-            アプリの開発中には、これまで存在しなかったライトモード・ダークモードをより簡単に実装できるようにするためのオープンソース開発も並行して進めています。
-            <br /> <br />{" "}
-            私は常に「このコードをもっと読みやすくするには？」「もっと効率的にするには？」と自問し、最新技術を習熟し高度に活用することを怠らない開発者です。単なるコーダーではなく、本物の開発者として成長し続けています。
+            既存のコードを踏襲するよりも、新しい技術や解決方法を適用することを好みます。
+            <br />
+            また、会社の開発哲学に合わせてリファクタリングし、社内で利用できるオープンソースとして構築した経験も多数あります。
+            <br />
+            <br />
+            例えば、Nexus Community や現在開発中の JP アプリでは、Next.js 12 の
+            fetch キャッシュ問題や baseURL 設定問題を解決するため、
+            <br />
+            自ら <strong>customFetchBase</strong>{" "}
+            というライブラリを開発し、リクエスト/
+            レスポンス処理やインターセプター機能を追加して社内配布しました。
+            <br />
+            <br />
+            JP アプリ開発中には、Light Mode / Dark Mode
+            をより簡単に構築できるよう オープンソース開発も並行して行いました。
+            <br />
+            <br />
+            このように、私は常に最新技術をより深く、より洗練された形で扱う努力を
+            続けてきました。
+            <br />
+            「どうすればもっと可読性が高くなるか？」「どうすればもっと効率的か？」
+            <br />
+            そう自問自答し続ける私は、ただのコーダーではなく開発者、
+            <strong>SOONHYUN SO</strong> です。
           </span>
         </Description>
       </ContentsContainer>
+
       <ContentsContainer>
-        <ContentsTitle theme={theme}>Education</ContentsTitle>
+        <ContentsTitle theme={theme}>学歴</ContentsTitle>
         <Description>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">KAIST RESEARCH：科学英才教育プログラム</li>
-            <li className="pb-2">Soongsil University：経営学専攻</li>
+            <li className="pb-2">崇実大学：経営学専攻</li>
             <li className="pb-2">
-              Franklin University Switzerland: AI・ビッグデータ専攻
+              フランクリン大学（スイス）：AI & ビッグデータ専攻
             </li>
           </ul>
         </Description>
       </ContentsContainer>
+
       <ContentsContainer>
         <ContentsTitle theme={theme}>職務経歴</ContentsTitle>
       </ContentsContainer>
+
       <ContentsContainer>
         <Description>
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2016 – 2019｜軍務
+            2016 – 2019｜軍勤務
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              MIMS（軍事情報管理システム）および
-              SIMS（信号情報分析プログラム）プロジェクトに参加し、Java と React
-              の実務経験を習得。
+              Java と React を活用し、MIMS（軍事情報管理システム）および
+              TAMS（信号情報分析プログラム）の開発に参加。
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2022 – 2022 | Server Developer, 개발팀 | Neaco
+            2022.08 – 2022.11｜サーバー開発者｜Neaco
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              政府主催の貿易教育プログラム WTA に参加し、3か月間
-              Avocado（アボカド） のプロジェクト業務をサポートしました。
-              本来は貿易関連の業務を行う予定でしたが、同社には開発チームの人員が不足していたため、開発チームの一員として業務に従事しました。
-              担当した主な業務は Neacoアプリの開発 です。
+              政府主催の WTA 貿易教育プログラムに参加し、3ヶ月間 Avocado
+              プロジェクトを支援。
+              <br />
+              当初は貿易業務を担当予定でしたが、開発チームの人員不足により
+              開発チームで Neaco アプリの開発業務を担当。
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2022 – 2023 | Team Lead, Development Team 2 | Klim Solutions
+            2022.11 – 2023.05｜開発2チームチームリーダー｜Cream Solution
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              軍での開発経験を活かして Klim Solutions に入社し、Belleforet
-              ハイブリッドアプリ開発を総括。
+              軍での経験を評価され、INQ本部の開発2チームリーダーとして入社。
+              <br />
+              <strong>Belleforet</strong> ハイブリッドアプリの開発を総括。
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2023年6月 – 2024年6月｜Senior Developer｜Nexus（UBase 子会社）
+            2023.06 – 2024.06｜上級開発者｜Nexus（UBase子会社）
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              Klim Solutions のレガシー eGov フレームワーク固執を理由に Nexus
-              へ転職。
+              旧式の eGov フレームワーク方針を避け、UBase の子会社 Nexus
+              に転職。
             </li>
             <li className="pb-2">
-              U Analysis および U Rms プロジェクトを担当し、U Rms
-              のフロントエンドを単独で開発。
-            </li>
-          </ul>
-          <ContentsTitle fontSize={2.4} theme={theme}>
-            2024年6月 – 2024年9月｜Front-End Developer｜Team Monolith
-          </ContentsTitle>
-          <ul className="text-left text-2xl list-[unset] pl-[14px]">
-            <li className="pb-2">
-              招待を受け、デジタル教科書プラットフォームの開発に参加。
+              「U Analysis」「U RMS」プロジェクトを担当し、そのうち U RMS
+              のフロントエンド開発を単独で実施。
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2024年9月 – 2025年1月｜Full-Stack Developer｜StyleLeader
+            2024.06 – 2024.09｜フロントエンド開発者｜Team Monolith
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              海外研修と並行して StyleLeader サイト開発に従事。
+              招待を受け、デジタル教科書プラットフォーム開発に参加。
             </li>
           </ul>
+
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2024年12月 – 現在｜Full-Stack Developer | JP （旅行レビューSNS）
+            2024.10 – 2025.01｜フルスタック開発者｜StyleLeader
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
-              Google Maps API
-              を活用した旅行レビューSNSアプリを開発中。1月中旬にリリース予定。
+              デジタル教科書事業終了後、海外研修中に StyleLeader
+              サイトの開発を担当。
+            </li>
+          </ul>
+
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2024 – 現在｜フロントエンド開発者｜JP（旅行レビューSNS）
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              Google Map API を活用した旅行レビューSNS「JP」を開発中。
+            </li>
+          </ul>
+
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025.02 – 2025.06｜フルスタック開発者｜社内グループウェア開発
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              フリーランスとして、海外の新興企業向けにグループウェアシステムを構築。
+            </li>
+          </ul>
+
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025.06 –
+            2025.06｜フルスタック開発者｜スポーツ・ストリーミングプラットフォーム
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              Soop、Chzzk、海外スポーツ配信を視聴・録画できるプラットフォームを
+              フリーランスとして開発。
+            </li>
+          </ul>
+
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025.06 – 2025.06｜フルスタック開発者｜暗号通貨取引プラットフォーム
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              個人間のコイン取引や貸付機能を実現する
+              暗号通貨P2P取引プラットフォームを開発。
             </li>
           </ul>
         </Description>
@@ -319,7 +432,7 @@ function KrVersion() {
             </li>
           </ul>
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2022 – 2022 | Server Developer, 개발팀 | Neaco
+            2022. 08. – 2022. 11. | Server Developer, 개발팀 | Neaco
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
@@ -330,7 +443,7 @@ function KrVersion() {
             </li>
           </ul>
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2022 – 2023 | Team Lead, 개발 2팀 | 크림 솔루션
+            2022. 11. – 2023. 05. | Team Lead, 개발 2팀 | 크림 솔루션
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
@@ -338,9 +451,12 @@ function KrVersion() {
               크림솔루션에 입사하였으며, Belleforet 하이브리드앱 제작을
               총괄하였습니다.
             </li>
+            <li className="pb-2">
+              Market Kully의 정산시스템 개발 프로젝트에 참여한 이력이 있습니다.
+            </li>
           </ul>
           <ContentsTitle fontSize={2.4} theme={theme}>
-            Jun 2023 – Jun 2024 | DT 서비스 개발팀 선임 | Nexus (UBase
+            2023. 06. – 2024. 06. | DT 서비스 개발팀 선임 | Nexus (UBase
             Subsidiary)
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
@@ -354,7 +470,7 @@ function KrVersion() {
             </li>
           </ul>
           <ContentsTitle fontSize={2.4} theme={theme}>
-            Jun 2024 – Sep 2024 | Front-End 개발자 | 팀모노리스
+            2024. 06 – 2024. 09 | Front-End 개발자 | 팀모노리스
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
@@ -366,7 +482,7 @@ function KrVersion() {
             </li>
           </ul>
           <ContentsTitle fontSize={2.4} theme={theme}>
-            Sep 2024 – Jan 2025 | Full-Stack 개발자 | StyleLeader
+            2024. 10. – 2025. 01. | Full-Stack 개발자 | StyleLeader
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
@@ -376,11 +492,39 @@ function KrVersion() {
             </li>
           </ul>
           <ContentsTitle fontSize={2.4} theme={theme}>
-            Dec 2024 – Present | Front-End 개발자 | JP (Travel Review SNS)
+            2024 - ... | Front-End 개발자 | JP (Travel Review SNS)
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">
               Google Map API 기반 여행 리뷰 SNS 어플, 제피 개발 중
+            </li>
+          </ul>
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025. 02. - 2025. 06 | FullStack 개발자 | 사내 그룹웨어 개발
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              프리랜서로서 의뢰를 받아 기타 해외 신생업체들의 그룹웨어 시스템을
+              구축하였습니다.
+            </li>
+          </ul>
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025. 06. - 2025. 06 | FullStack 개발자 | 스포츠 및 스트리밍 플랫폼
+            개발
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              프리랜서로서 의뢰를 받아 Soop, chzzk, 국내외 스포츠 영상을
+              시청하고, 녹화할 수 있는 플랫폼을 개발하였습니다.
+            </li>
+          </ul>
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            2025. 06. - 2025. 06 | FullStack 개발자 | 암호화폐 거래 플랫폼 개발
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              프리랜서로서 의뢰를 받아 개인간 코인 거래를 손쉽게 할 수 있고 대출
+              시스템까지 유지 가능한 암호화폐 개인거래 플랫폼을 개발하였습니다.
             </li>
           </ul>
         </Description>
