@@ -271,11 +271,6 @@ function KrVersion() {
               필요합니다.
             </li>
             <li className="pb-2">
-              하지만 SOOP의 경우는 좀 다른데 같은 플랫폼에서만 영상 시청이
-              가능하게 설계가 되어있어, 이걸 Server에서 다시 proxy 해주는 과정이
-              필요합니다.
-            </li>
-            <li className="pb-2">
               따라서 Server 가 모든 TS 세그먼트들의 경로를 받아 proxy 처리하고
               이걸 다시 서버가 재귀로 받아서 hls js가 시청할 수 있게 다시
               client에 전송하여 시청하게 합니다.
