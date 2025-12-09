@@ -194,6 +194,15 @@ function EnVersion() {
               exchanges.
             </li>
           </ul>
+          <ContentsTitle fontSize={2.4} theme={theme}>
+            Dec 2024 – Present | Ful Developer | JP (Travel Review SNS)
+          </ContentsTitle>
+          <ul className="text-left text-2xl list-[unset] pl-[14px]">
+            <li className="pb-2">
+              Currently developing a Google Maps–based travel review social
+              networking app, scheduled to launch in mid-January.
+            </li>
+          </ul>
         </Description>
       </ContentsContainer>
     </>
@@ -519,7 +528,7 @@ function KrVersion() {
             </li>
           </ul>
           <ContentsTitle fontSize={2.4} theme={theme}>
-            2025. 06. - 2025. 06 | FullStack 개발자 | 암호화폐 거래 플랫폼 개발
+            2025. 06. - 2025. 09 | FullStack 개발자 | 암호화폐 거래 플랫폼 개발
           </ContentsTitle>
           <ul className="text-left text-2xl list-[unset] pl-[14px]">
             <li className="pb-2">

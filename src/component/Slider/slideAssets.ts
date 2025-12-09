@@ -82,5 +82,6 @@ export const WheelSlideAssets: WheelSlideAssetType[] = [
     title: "Server API",
     num: "12",
     img: githubLogo,
+    link: "https://github.com/SuniPro",
   },
 ];

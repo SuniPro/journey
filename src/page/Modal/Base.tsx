@@ -15,6 +15,7 @@ import { Codle } from "./Codle";
 import { Icoins } from "./Icoins";
 import { Anycast } from "./Anycast";
 import { useNavigate } from "react-router-dom";
+import { GitHub } from "./GitHub";
 
 export type Language = "en" | "jp" | "kr";
 
@@ -68,6 +69,8 @@ export function Base(props: {
       case "AppleStyle":
       case "NetflixStyle":
         return <></>;
+      case "Server API":
+        return <GitHub language={language} link={link} />;
     }
   };
 
@@ -109,6 +112,7 @@ export function Base(props: {
           </CancelBox>
           <div
             css={css`
+              width: 100%;
               height: 100%;
               background-color: ${theme.mode.cardBackground};
             `}
