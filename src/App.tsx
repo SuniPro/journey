@@ -30,8 +30,8 @@ function App() {
               <CursorProvider>
                 <Routes>
                   <Route path="/" element={<Main />}></Route>
-                  <Route path="/apple" element={<AppleStyle />}></Route>
-                  <Route path="/netflix" element={<NetflixStyle />}></Route>
+                  {/*<Route path="/apple" element={<AppleStyle />}></Route>*/}
+                  {/*<Route path="/netflix" element={<NetflixStyle />}></Route>*/}
                 </Routes>
                 <Cursor />
               </CursorProvider>
